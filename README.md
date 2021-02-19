@@ -1,88 +1,92 @@
-# Mosaicking
+# Programma
 
-Questo progetto prevede la creazione di un mosaico di immagini a partire da un video come sistema di mappatura.
+Questo programma prevede la creazione di un mosaico di immagini di fondali marini. Il seguente programma non tiene conto di problematiche relative alla distorsione delle immagini causata dalla lente della camera e alla posizione del AUV. Tramite la raccolta di questi parametri è possibile migliorare l'implementazione andando ad evitare fenomeni quali la distorsione prospettica crescente a causa del calcolo ricorsivo delle matrici omografiche.
 
 ## Librerie
-* OpenCV
-* NumPy
-* Pyplot
+* OpenCV (testato 4.5.1)
+* NumPy (testato 1.19.4)
+* glob
+* PIL.Image
+* os
+* sys
 
 ## Struttura
 
 ### File
 
-* [main.py](https://github.com/denardincarlo/Mosaicking/tree/master/main.py): file principale. Contiene le istruzioni per l'estrapolazione dei frame e generazione del mosaico;
-* [sift.py](https://github.com/denardincarlo/Mosaicking/tree/master/sift.py): file contenente ricerca e matching delle features;
-* [ransac.py](https://github.com/denardincarlo/Mosaicking/tree/master/ransac.py): file contenente la ricerca delle omografie tra immagini adiacenti (H1 H2, H2 H3, H3 H4, ...) e degli inliers ed outliers;
-* [dependencies.py](https://github.com/denardincarlo/Mosaicking/tree/master/dependencies.py): file contenente le dependencies utilizzate e le funzioni per disegnare punti e linee.
-
-### Cartelle
-
-Il programma è stato strutturato per avere una visione completa di tutti i passaggi.
-
-* [Immagini](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini): Cartella principale delle immagini
-  * [input](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini/input): contiene le immagini (frame) estratti dal video [video.mp4](https://github.com/denardincarlo/Mosaicking/tree/master/Video/video.mp4)
-  * [sift](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini/sift): contiene le immagini con feature evidenziate tramite l'algoritmo sift
-  * [match](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini/match): contiene le immagini adiacenti unite tra di loro con feature evidenziate
-  * [inliers](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini/inliers): contiene le immagini adiacenti unite tra di loro con feature evidenziate più accurate
-  * [outliers](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini/outliers): contiene le immagini adiacenti unite tra di loro con feature evidenziate meno accurate
-  * [output](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini/output): contiene il risultato finale (stitch) step-by-step
-* [Video](https://github.com/denardincarlo/Mosaicking/tree/master/Video): Cartella principale dei video
-  * [video.mp4](https://github.com/denardincarlo/Mosaicking/tree/master/Video/video.mp4): esempio video
+* [Mosaic.py](https://github.com/denardincarlo/seabed-mosaicking/Mosaic.py): file principale contenente la gestione dell'intero processo;
+* [FeaturesDetection.py](https://github.com/denardincarlo/Mosaicking/tree/master/sift.py): file per l'identificazione di caratteristiche e corrispondenze tra due immagini;
+* [Ransac.py](https://github.com/denardincarlo/seabed-mosaicking/Ransac.py): file per la ricerca delle omografie tra immagini adiacenti (H1 H2, H2 H3, H3 H4, ...) e dei relativi tra inliers ed outliers tra immagini adiacenti;
+* [Stitcher.py](https://github.com/denardincarlo/seabed-mosaicking/Stitcher.py): file per il processo di calcolo delle omografie ricorsive e gestione della cucitura;
+* [dependencies.py](https://github.com/denardincarlo/seabed-mosaicking/Dependencies.py): file contenente funzioni di supporto e librerie utilizzate.
 
 ## Processo
 
-Il programma prevede la creazione di una mappa da video. L'idea prevede l'ottenimento di dei frame del video, quindi immagini ordinate. Successivamente tramite l'utilizzo di algoritmi come: SIFT e RANSAC si possono cucire (stitch) le immagini tra di loro mediante la matrice di omografia delle immagini adiacenti. Avendo immagini ordinate è stata calcolata la matrice di omografia solamente per le immagini adiacenti quindi H1_H2, H2_H3, H3_H4, etc. 
-
-### Esempio 1
-1. Video
-
-![video](/esempio/video1.gif)
-
-2. Risultato
-
-![risultato](/esempio/risultato1.jpg)
+Il programma prevede la creazione di un mosaico di immagini a partire da successioni di immagini aventi sezioni sovrapposte. I passaggi eseguiti sono i seguenti:
+1. Identificazione caratteristiche delle immagini tramite la possibile scelta di 4 diversi algoritmi di features detection (AKAZE, BRISK, ORB, SIFT);
+2. Match delle caratteristiche identificate tra immagini adiacenti mediante un approccio Brute-Force basato sulla distanza minima;
+3. Calcolo della matrice omografica tra immagini adiacenti su un sottoinsieme di match identificato tramite RANSAC [H12, H23, H34..];
+4. Calcolo omografie ricorsive  [H12, H13, H14..] = [H12, H12 * H23, H13 * H34..]
+5. Cambiamento di prospettiva delle immagini;
+6. Cucitura delle immagini.
 
 
-### Esempio 2
-1. Video
+### Test
 
-![video](/esempio/video2.gif)
+Il programma è stato reso testabile tramite:
 
-2. Risultato
+```
+python Mosaic.py cartella_test algoritmo_utilizzato
+ES: python Mosaic.py test3 ORB
+```
 
-![risultato](/esempio/risultato2.jpg)
+Sono stati forniti una serie di test composti da, circa, 8 immagini catturate mediante una avanzamento progressivo frontale della camera per evitare fenomeni riguardanti eccessiva distorsione.
 
-### Esempio
+- [Images](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini): Cartella principale delle immagini
+  -  [test1](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test1): dataset1 (Numero frame 42 - 49)
+  -  [test2](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test2): dataset1 (481 - 488)
+  -  [test3](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test3): dataset2 (117 - 124)
+  -  [test4](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test4): dataset2 (937 - 945)
+  -  [test5](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test5): dataset3 (301 - 308)
+  -  [test6](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test6): dataset3 (992 - 999)
+  -  [test7](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test7): dataset4 (75 - 82)
+  -  [test8](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test8): dataset4 (644 - 651)
+  -  [test9](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test9): dataset5 (106 - 113)
+  -  [test10](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test10): dataset5 (520 - 527) 
 
-Consideriamo di avere una lista di immagini.
+Note: Akaze non ha trovato features sufficenti ad eseguire il processo di mosaicking nel test10
 
-1. Estrapolazione frame da video;
+I risultati del processo dei test, mediante i diversi algoritmi, si possono trovare nella cartella [Images](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Risultati%20test)
 
-![video](/esempio/video.gif)
+Per effettuare nuovi testi seguire i seguenti passaggi:
+1. Creare cartella test* all'interno di 'Images';
+2. Nella cartella test creare 3 sottocartelle (input, processing, output);
+3. Nella cartella input inserire in ordine di spostamento frontale della camera (dal basso verso l'alto per evitare distorsioni maggiori) circa 8 frame successivi;
+4. Eseguto lo script nella cartella processing si potranno vedere i cambiamenti di prospettiva delle immagini e nella cartella output i risultati.
 
-2. Ottenimento punti chiave immagine[i] e immagine[i + 1];
+## Esempi risultati Test
+<p>
+  <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="250" height="500" alt="dataset2 test3 ORB"/>
+  <em>Dataset2 test3 ORB</em>
+</p>
+<p>
+  <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test9/SIFT.png" width="250" height="500" alt="dataset5 test9 SIFT"/>
+  <em>Dataset5 test9 SIFT</em>
+</p>
+<p>
+  <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test4/AKAZE.png" width="250" height="500" alt="dataset2 test4 AKAZE"/>
+  <em>Dataset2 test4 AKAZE</em>
+</p>
+<p>
+  <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test1/BRISK.png" width="250" height="500" alt="dataset1 test1 BRISK"/>
+  <em>Dataset1 test1 BRISK</em>
+</p>
 
-![immagine[i]](/Immagini/sift/f1.jpg)
-![immagine[i + 1]](/Immagini/sift/f1.jpg)
+## Considerazioni finali
 
-3. Matching descrittori dei punti chiave delle due immagini;
+Il programma implementa tutti i passaggi per la creazione di un mosaico di immagini di fondali marini. Soffre del progressivo aumento di distorsione dovuta dalla cucitura di immagini aventi distorsione.
 
-![match](/Immagini/match/f1_f2.jpg)
+## Possibili migliorie
 
-4. Calcolo matrice di omografia, inliers (linee verdi) ed outliers (linee rosse);
-
-![inliers](/Immagini/inliers/f1_f2.jpg)
-![outliers](/Immagini/outliers/f1_f2.jpg)
-
-5. Cucitura immagine[i] e immagine[i + 1].
-
-![stitch](/Immagini/output/result2.jpg)
-
-6. Ripetere le istruzioni da (2) con input immagine[i + 1] e immagine[i + 2], così fino a completare il mosaico.
-
-![output](/Immagini/output/result21.jpg)
-
-
-
+Conoscendo diversi parametri relativi al dispositivo di acquisizione delle immagini e al dispositivo subacqueo (velocità, correnti..) è possibile apportare migliorie al mosaico finale e creare una struttura dinamica di stiching in base al calcolo della posizione del AUV.
 
