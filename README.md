@@ -68,7 +68,7 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 
 Il programma implementa tutti i passaggi per la creazione di un mosaico di immagini di fondali marini. Soffre del progressivo aumento di distorsione dovuta dalla cucitura di immagini aventi distorsione.
 
-### Possibili migliorie
+## Possibili migliorie
 
 Conoscendo diversi parametri relativi al dispositivo di acquisizione delle immagini e al dispositivo subacqueo (velocità, correnti..) è possibile apportare migliorie al mosaico finale e creare una struttura dinamica di stiching in base al calcolo della posizione del AUV.
 
