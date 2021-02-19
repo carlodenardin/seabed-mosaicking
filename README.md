@@ -31,7 +31,7 @@ Il programma prevede la creazione di un mosaico di immagini a partire da success
 6. Cucitura delle immagini.
 
 
-### Test
+## Test
 
 Il programma è stato reso testabile tramite:
 
