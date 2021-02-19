@@ -64,10 +64,9 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 3. Nella cartella input inserire in ordine di spostamento frontale della camera (dal basso verso l'alto per evitare distorsioni maggiori) circa 8 frame successivi;
 4. Eseguto lo script nella cartella processing si potranno vedere i cambiamenti di prospettiva delle immagini e nella cartella output i risultati.
 
-## Risultati Test
+## Esempi risultati Test
 
-Vengono di seguito riportati dei risultati dei Test effettuati:
-<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="500" height="1000"/>
+<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="250" height="500"/>
 
 ## Considerazioni finali
 
