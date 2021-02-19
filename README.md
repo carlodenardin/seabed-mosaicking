@@ -67,7 +67,7 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 ## Risultati Test
 
 Vengono di seguito riportati dei risultati dei Test effettuati:
-![alt test3 ORB](https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png =1000x2000)
+<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="1000" height="2000"/>
 
 ## Considerazioni finali
 
