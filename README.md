@@ -43,20 +43,20 @@ ES: python Mosaic.py test3 ORB
 ```
 
 * [Images](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini): Cartella principale delle immagini
-* test1: dataset1 (Numero frame 42 - 49)
-* test2: dataset1 (481 - 488)
-* test3: dataset2 (117 - 124)
-* test4: dataset2 (937 - 945)
-* test5: dataset3 (301 - 308)
-* test6: dataset3 (992 - 999)
-* test7: dataset4 (75 - 82)
-* test8: dataset4 (644 - 651)
-* test9: dataset5 (106 - 113)
-* test10: dataset5 (520 - 527) 
+*  test1: dataset1 (Numero frame 42 - 49)
+*  test2: dataset1 (481 - 488)
+*  test3: dataset2 (117 - 124)
+*  test4: dataset2 (937 - 945)
+*  test5: dataset3 (301 - 308)
+*  test6: dataset3 (992 - 999)
+*  test7: dataset4 (75 - 82)
+*  test8: dataset4 (644 - 651)
+*  test9: dataset5 (106 - 113)
+*  test10: dataset5 (520 - 527) 
 
 Note: Akaze non ha trovato features sufficenti ad eseguire il processo di mosaicking nel test10
 
-I risultati si possono trovare nella cartella [Images](https://github.com/denardincarlo/seabed-mosaicking/)
+I risultati si possono trovare nella cartella [Images](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Risultati%20test)
 
 
 ### Esempio 1
