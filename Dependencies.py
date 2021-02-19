@@ -3,7 +3,6 @@ Gestione di metodi e librerie di supporto.
 """
 import os
 import numpy as np 
-import matplotlib.pyplot as pyplot
 from cv2 import cv2
 from PIL import Image
 import sys
