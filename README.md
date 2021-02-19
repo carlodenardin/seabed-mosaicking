@@ -64,6 +64,10 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 3. Nella cartella input inserire in ordine di spostamento frontale della camera (dal basso verso l'alto per evitare distorsioni maggiori) circa 8 frame successivi;
 4. Eseguto lo script nella cartella processing si potranno vedere i cambiamenti di prospettiva delle immagini e nella cartella output i risultati.
 
+## Risultati Test
+
+Vengono di seguito riportati dei risultati dei Test effettuati:
+
 ## Considerazioni finali
 
 Il programma implementa tutti i passaggi per la creazione di un mosaico di immagini di fondali marini. Soffre del progressivo aumento di distorsione dovuta dalla cucitura di immagini aventi distorsione.
