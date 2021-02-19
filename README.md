@@ -65,8 +65,10 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 4. Eseguto lo script nella cartella processing si potranno vedere i cambiamenti di prospettiva delle immagini e nella cartella output i risultati.
 
 ## Esempi risultati Test
-
-<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="250" height="500" alt="dataset2 test3 ORB"/>
+<p>
+  <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="250" height="500" alt="dataset2 test3 ORB"/>
+  <em>Dataset2 test3 ORB</em>
+</p>
 <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test9/SIFT.png" width="250" height="500" alt="dataset5 test9 SIFT"/>
 <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test4/AKAZE.png" width="250" height="500" alt="dataset2 test4 AKAZE"/>
 <img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test1/BRISK.png" width="250" height="500" alt="dataset1 test1 BRISK"/>
