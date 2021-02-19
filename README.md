@@ -37,7 +37,14 @@ Il programma è stato reso testabile tramite:
 
 ```
 python Mosaic.py cartella_test algoritmo_utilizzato
-ES: python Mosaic.py test3 ORB
+```
+- cartella_test: nome della cartella test;
+- algoritmo_utilizzato: scelta tra (AKAZE, BRISK, ORB, SIFT);
+
+Esempio:
+
+```
+python Mosaic.py test1 ORB
 ```
 
 Sono stati forniti una serie di test composti da, circa, 8 immagini catturate mediante una avanzamento progressivo frontale della camera per evitare fenomeni riguardanti eccessiva distorsione.
