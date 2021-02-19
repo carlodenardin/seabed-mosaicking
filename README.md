@@ -46,8 +46,9 @@ Esempio:
 ```
 python Mosaic.py test1 ORB
 ```
-N.B. Se si intende clonare la seguente repository per eseguire i test ricordarsi di aggiungere le due cartelle 'processing' e 'output' all'interno della cartella 'Images\test*'.
 Sono stati forniti una serie di test composti da, circa, 8 immagini catturate mediante una avanzamento progressivo frontale della camera per evitare fenomeni riguardanti eccessiva distorsione.
+
+N.B. Se si intende clonare la seguente repository per eseguire i test ricordarsi di aggiungere le due cartelle 'processing' e 'output' all'interno della cartella 'Images\test*'.
 
 - [Images](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini): Cartella principale delle immagini
   -  [test1](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test1): dataset1 (Numero frame 42 - 49)
