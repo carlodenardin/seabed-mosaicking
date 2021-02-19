@@ -66,7 +66,10 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 
 ## Esempi risultati Test
 
-<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="250" height="500"/>
+<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test3/ORB.png" width="250" height="500" alt="dataset2 test3 ORB"/>
+<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test9/SIFT.png" width="250" height="500" alt="dataset5 test9 SIFT"/>
+<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test4/AKAZE.png" width="250" height="500" alt="dataset2 test4 AKAZE"/>
+<img src="https://github.com/denardincarlo/seabed-mosaicking/blob/main/Risultati%20test/test1/BRISK.png" width="250" height="500" alt="dataset1 test1 BRISK"/>
 
 ## Considerazioni finali
 
