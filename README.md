@@ -62,7 +62,7 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 1. Creare cartella test* all'interno di 'Images';
 2. Nella cartella test creare 3 sottocartelle (input, processing, output);
 3. Nella cartella input inserire in ordine di spostamento frontale della camera (dal basso verso l'alto per evitare distorsioni maggiori) circa 8 frame successivi;
-4. Eseguto lo script nella cartella processing si potranno vedere i cambiamenti di prospettiva delle immagini e nella cartella output i risultati.
+4. Eseguito lo script nella cartella processing si potranno vedere i cambiamenti di prospettiva delle immagini e nella cartella output il mosaico risultante.
 
 ## Esempi risultati Test
 <p>
