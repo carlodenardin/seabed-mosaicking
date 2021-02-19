@@ -18,7 +18,7 @@ Questo programma prevede la creazione di un mosaico di immagini di fondali marin
 * [FeaturesDetection.py](https://github.com/denardincarlo/Mosaicking/tree/master/sift.py): file per l'identificazione di caratteristiche e corrispondenze tra due immagini;
 * [Ransac.py](https://github.com/denardincarlo/seabed-mosaicking/Ransac.py): file per la ricerca delle omografie tra immagini adiacenti (H1 H2, H2 H3, H3 H4, ...) e dei relativi inliers ed outliers tra immagini adiacenti;
 * [Stitcher.py](https://github.com/denardincarlo/seabed-mosaicking/Stitcher.py): file per il processo di calcolo delle omografie ricorsive e gestione della cucitura;
-* [dependencies.py](https://github.com/denardincarlo/seabed-mosaicking/Dependencies.py): file contenente funzioni di supporto e librerie utilizzate.
+* [Dependencies.py](https://github.com/denardincarlo/seabed-mosaicking/Dependencies.py): file contenente funzioni di supporto e librerie utilizzate.
 
 ## Processo
 
