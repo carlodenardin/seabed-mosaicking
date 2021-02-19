@@ -14,11 +14,11 @@ Questo programma prevede la creazione di un mosaico di immagini di fondali marin
 
 ### File
 
-* [Mosaic.py](https://github.com/denardincarlo/seabed-mosaicking/Mosaic.py): file principale contenente la gestione dell'intero processo;
-* [FeaturesDetection.py](https://github.com/denardincarlo/Mosaicking/tree/master/sift.py): file per l'identificazione di caratteristiche e corrispondenze tra due immagini;
-* [Ransac.py](https://github.com/denardincarlo/seabed-mosaicking/Ransac.py): file per la ricerca delle omografie tra immagini adiacenti (H1 H2, H2 H3, H3 H4, ...) e dei relativi inliers ed outliers tra immagini adiacenti;
-* [Stitcher.py](https://github.com/denardincarlo/seabed-mosaicking/Stitcher.py): file per il processo di calcolo delle omografie ricorsive e gestione della cucitura;
-* [Dependencies.py](https://github.com/denardincarlo/seabed-mosaicking/Dependencies.py): file contenente funzioni di supporto e librerie utilizzate.
+* [Mosaic.py](https://github.com/denardincarlo/seabed-mosaicking/blob/main/Mosaic.py): file principale contenente la gestione dell'intero processo;
+* [FeaturesDetection.py](https://github.com/denardincarlo/seabed-mosaicking/blob/main/FeaturesDetection.py): file per l'identificazione di caratteristiche e corrispondenze tra due immagini;
+* [Ransac.py](https://github.com/denardincarlo/seabed-mosaicking/blob/main/Ransac.py): file per la ricerca delle omografie tra immagini adiacenti (H1 H2, H2 H3, H3 H4, ...) e dei relativi inliers ed outliers tra immagini adiacenti;
+* [Stitcher.py](https://github.com/denardincarlo/seabed-mosaicking/blob/main/Stitcher.py): file per il processo di calcolo delle omografie ricorsive e gestione della cucitura;
+* [Dependencies.py](https://github.com/denardincarlo/seabed-mosaicking/blob/main/Dependencies.py): file contenente funzioni di supporto e librerie utilizzate.
 
 ## Processo
 
@@ -50,7 +50,7 @@ Sono stati forniti una serie di test composti da, circa, 8 immagini catturate me
 
 N.B. Se si intende clonare la seguente repository per eseguire i test ricordarsi di aggiungere le due cartelle 'processing' e 'output' all'interno delle cartella 'Images\test*'.
 
-- [Images](https://github.com/denardincarlo/Mosaicking/tree/master/Immagini): Cartella principale delle immagini
+- [Images](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images): Cartella principale delle immagini
   -  [test1](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test1): dataset1 (Numero frame 42 - 49)
   -  [test2](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test2): dataset1 (481 - 488)
   -  [test3](https://github.com/denardincarlo/seabed-mosaicking/tree/main/Images/test3): dataset2 (117 - 124)
