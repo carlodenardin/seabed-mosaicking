@@ -86,7 +86,7 @@ Per effettuare nuovi testi seguire i seguenti passaggi:
 
 Il programma implementa tutti i passaggi per la creazione di un mosaico di immagini di fondali marini. Soffre del progressivo aumento di distorsione dovuta dalla cucitura di immagini catturate con una determinata lente non lineare. Di seguito sono riportate delle possibili migliorie:
 1. Ottenimento parametri riguardanti la camera per eliminare la distorsione;
-2. Utilizzo di frames successivi con un maggiore sezione sovrapposta (70/80 %)
+2. Utilizzo di frames successivi con un maggiore sezione sovrapposta superiore al 70 %;
 3. Utilizzo di parametri relativi al dispositivo subaqueo (velocità, correnti, ..) per eddettuare la posizione globale del dispositivo e realizzare un piano di stitch dinamico.
 
 
